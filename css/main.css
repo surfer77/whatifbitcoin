@@ -1,0 +1,124 @@
+body {
+    background: #61bfad;
+    /* #ff8b8b; */
+    /* #f0cf61; */
+}
+
+#header {
+	font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 1.67rem;
+    font-weight: 100;
+}
+
+.actual {
+    margin-top: 100px!important;
+}
+
+.query {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 2.67rem;
+    font-weight: 100;
+}
+
+.app-div {
+    margin-top: 1em;
+}
+
+.amount {
+    background: #c6d7c7;
+    font: inherit;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    transition: all .1s linear;
+    max-width: 3em;
+}
+
+.select-coin {
+    background: #c6d7c7;
+    font: inherit;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    transition: all .1s linear;
+    max-width: 5em;
+}
+
+.date {
+    background: #c6d7c7;
+    font: inherit;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    transition: all .1s linear;
+    max-width: 3em;
+}
+
+.year {
+    max-width: 3em!important;
+}
+
+@media screen and (max-width: 700px) {
+    .actual {
+    margin-top: 20px!important;
+        }
+}
+
+/* buttons */
+
+.button-section {
+    margin-top: 25px;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 15px 25px;
+    font-size: 22px;
+    text-decoration: none;
+    margin: 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    width: 100px;
+}
+
+.btn:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+}
+
+.blue {
+    background-color: /* #55acee */ #FC3C2D;
+    box-shadow: 0px 5px 0px 0px /* #3C93D5 */ #FC3C2D;
+}
+
+.blue:hover {
+    background-color: #F0CF89;
+}
+
+.green {
+    background-color: #2ecc71;
+    box-shadow: 0px 5px 0px 0px #15B358;
+}
+
+.green:hover {
+    background-color: #48E68B;
+}

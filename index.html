@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link type="text/css" rel="stylesheet" href="css/flexboxgrid.css">
+        <link type="text/css" rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <title>Shit I didn't Invest</title>
+</head>
+
+<body>
+    <div class="container">
+    <section id="header">
+        <div class="row end-md center-xs">
+            <div class="col-md-3 col-xs-12 col-sm-12" style="float:left">
+				 How much would you have made today?
+	            </div>
+            <div class="col-md-9 col-xs-12 col-sm-12" style="float:right">
+                About
+            </div>
+        </div>
+     </section>
+        <section id="main" class="actual">
+            <div class="row center-xs  query">
+                <div class="col-md-8 col-xs-12">
+                    <div class="app-div">
+                        If invested $
+                        <input type="text" name="s" tabindex="1" placeholder="" class="amount" maxlength="5" autofocus="">
+                    </div>
+                    <div class="app-div">
+                        in
+                        <select name="coin" form="carform" class="select-coin">
+                            <option value="Bitcoin">Bitcoin</option>
+                            <option value="saab">Ethereum</option>
+                            <option value="opel">Ripple</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </div>
+                    <div class="app-div">
+                        on
+                        <select name="coin" form="carform" class="date month">
+                            <option value="01">Jan  </option>
+                            <option value="02">Feb</option>
+                            <option value="03">Mar</option>
+                            <option value="04">Apr</option>
+                        </select>
+                        <select name="coin" form="carform" class="date day">
+                            <option value="01">1</option>
+                            <option value="02">2</option>
+                            <option value="03">3</option>
+                            <option value="04">4</option>
+                        </select>
+                        <select name="coin" form="carform" class="date year">
+                            <option value="2009">2009</option>
+                            <option value="2010">2010</option>
+                            <option value="2011">2011</option>
+                            <option value="2012">2012</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row center-xs button-section">
+                <div id="buttons">
+                    <a href="#" class="btn blue" onClick="clicked()">Submit</a>
+<!--                     			  <a href="#" class="btn green">Random</a>
+ -->                </div>
+            </div>
+        </section>
+        <section id="footer">
+            <div class="row bottom-xs" style="">
+                <div class="col-xs-12">
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
+<style>
+
+</style>
+
+
+<script>
+function clicked() {
+
+  var day = document.querySelector(".day").value;
+  var month = document.querySelector(".month").value;
+  var year = document.querySelector(".year").value;
+  var amount = document.querySelector(".amount").value;
+
+  query = year + "-" + month + "-" + day;
+  window.location.replace("result.html?date=" + query + "&amount=" + amount);
+
+  // console.log(amount)
+}
+
+</script>
