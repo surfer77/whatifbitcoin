@@ -65,21 +65,23 @@ function getAllUrlParams(url) {
 
 var date = getAllUrlParams().date;
 var amount = getAllUrlParams().amount;
+var coin = getAllUrlParams().coin;
+
 
 // api call price for specific date
 var url = "https://api.coindesk.com/v1/bpi/historical/close.json?" + "start=" + date + "&end=" + date;
 
 console.log(url);
 
-axios.get(url)
-  .then(function(response) {
-    var res = response.data.bpi;
-    var price = res[Object.keys(res)[0]];
-    console.log(price);
-  })
-  .catch(function(error) {
-    console.log(error);
-  });
+// axios.get(url)
+//   .then(function(response) {
+//     var res = response.data.bpi;
+//     var price = res[Object.keys(res)[0]];
+//     console.log(price);
+//   })
+//   .catch(function(error) {
+//     console.log(error);
+//   });
 
 // api call current price
 // axios.get("https://api.coindesk.com/v1/bpi/currentprice.json")
@@ -91,18 +93,20 @@ axios.get(url)
 //     console.log(error);
 //   });
 
-currentPrice = 2800;
-
+currentPrice = 3400;
+currentPriceEth = 311;
 // change ui
-function changeAmount() {
+
+function changeUi() {
   var amountEl = document.querySelector("#amount");
   amountEl.innerHTML = splitMille(amount);
+  var dateEl = document.querySelector("#date");
+  dateEl.innerHTML = decodeURI(date);
+  var coinEl = document.querySelector('#coin');
+  coinEl.innerHTML = coin.toUpperCase();
+
 }
 
-function changeDate() {
-  var dateEl = document.querySelector("#date");
-  dateEl.innerHTML = date;
-}
 
 function splitMille(n, separator = ',') {
   // Cast to string
@@ -128,7 +132,9 @@ function splitMille(n, separator = ',') {
   return `${num}${decimals}`
 }
 
-function makeMath() {
+//calculate and get bitcoin
+
+function makeMathBitcoin() {
   axios.get(url)
     .then(function(response) {
       var res = response.data.bpi;
@@ -146,16 +152,64 @@ function makeMath() {
       var fbStatus = "https://www.facebook.com/dialog/feed?app_id=184683071273&link=http%3A%2F%2Fwhatifbitcoin.com&picture=https%3A%2F%2Fwww.w3schools.com%2Fcss%2Ftrolltunga.jpg&name=What%20would%20happen%20if%20you%20invested%20in%20Bitcoin%3F&caption=%20&description=" + status + "&redirect_uri=http%3A%2F%2Fwww.facebook.com%2F" ;
       document.querySelector('.twitter-share-button').href = twitterStatus;
       document.querySelector('.facebookStatus').href = fbStatus;
-
     })
     .catch(function(error) {
       console.log(error);
     });
 }
 
-window.onload = changeAmount();
-window.onload = changeDate();
-window.onload = makeMath();
+// calculate and get ethereum 
+
+function makeMathEthereum() {
+    axios.get('/js/ethereum.json')
+    .then(function(response) {
+      var data = response.data;
+      // console.log(data[9].date.toLowerCase());
+      // console.log(decodeURI(date).toLowerCase())
+      for (i = 0; i < data.length; i++) {
+        if (data[i].date.toLowerCase() == decodeURI(date).toLowerCase() ) {
+          console.log(data[i].price);
+          console.log(data[i].date);
+          var price = data[i].price
+          var profitEl = document.querySelector("#profit");
+          netProfit = Math.round(amount / price * currentPriceEth - amount);
+          profitEl.innerHTML = splitMille(netProfit);
+
+          var percEl = document.querySelector('#percentage');
+          percEl.innerHTML = splitMille(Math.round(netProfit / amount * 100));
+          var status = "Ethereum.. If you invested $" + amount + " in Ethereum on " + date + " you would have made $" + splitMille(netProfit) + " in profits. http://whatifbitcoin.com";
+
+          var twitterStatus = "https://twitter.com/home?status=" + status;
+          var fbStatus = "https://www.facebook.com/dialog/feed?app_id=184683071273&link=http%3A%2F%2Fwhatifbitcoin.com&picture=https%3A%2F%2Fwww.w3schools.com%2Fcss%2Ftrolltunga.jpg&name=What%20would%20happen%20if%20you%20invested%20in%20Ethereum%3F&caption=%20&description=" + status + "&redirect_uri=http%3A%2F%2Fwww.facebook.com%2F" ;
+          document.querySelector('.twitter-share-button').href = twitterStatus;
+          document.querySelector('.facebookStatus').href = fbStatus;
+
+        }
+      }
+      
+      })
+      .catch(function(err) {
+        console.log(err)
+      });
+
+};
+
+// If its bitcoin run the proper functions.
+if (coin == "bitcoin") {
+  // window.onload = changeAmount();
+  // window.onload = changeCoin();
+  // window.onload = changeDate();
+  window.onload = changeUi();
+  window.onload = makeMathBitcoin();
+}
+
+
+if (coin == 'ethereum') {
+  window.onload = changeUi();
+  window.onload = makeMathEthereum();
+}
+
+
 // math to calculate profits.
 
 console.log(amount)
@@ -169,4 +223,8 @@ function ran_col() { //function name
   document.querySelector('body').style.background = color; // Setting the random color on your div element.
 }
 
+
+
 window.onload = ran_col();
+
+

@@ -1,0 +1,13 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC] 
+RewriteRule ^ https://pcsmartcare.com%{REQUEST_URI} [L,R=301] 
+
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ /$1.html [L,R=301] 
+
+RewriteCond %{THE_REQUEST} /index\.html?\s [NC]
+RewriteRule ^(.*)index\.html?$ /$1 [R=301,L,NC]

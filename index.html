@@ -2,22 +2,27 @@
 <html lang="en">
 
 <head>
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/flexboxgrid.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <title>What If Bitcoin - Shoot I didn&#39;t invest.</title>
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-ga('create', 'UA-103556679-2', 'auto');
-ga('send', 'pageview');
-
-</script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link type="text/css" rel="stylesheet" href="css/flexboxgrid.css">
-        <link type="text/css" rel="stylesheet" href="css/main.css">
-    <meta charset="UTF-8">
-    <title>What If Bitcoin - Shoot I didn't invest.</title>
+    ga('create', 'UA-103556679-2', 'auto');
+    ga('send', 'pageview');
+    </script>
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@surfcoderepeat">
     <meta name="twitter:title" content="If you invested $100 in Bitcoin in 2011?">
@@ -31,38 +36,28 @@ ga('send', 'pageview');
 </head>
 
 <body>
-
     <div class="container">
-    <section id="header">
-        <div class="row end-md center-xs">
-            <div class="col-md-3 col-xs-12 col-sm-12" style="float:left">
-				 <a href="index.html" class="logo">WhatIfBitcoin.com</a>
-	            </div>
-            <div class="col-md-9 col-xs-12 col-sm-12" style="float:right">
-
+        <section id="header">
+            <div class="row end-md center-xs">
+                <div class="col-md-3 col-xs-12 col-sm-12" style="float:left"><a class="logo" href="index.html">WhatIfBitcoin.com</a></div>
+                <div class="col-md-9 col-xs-12 col-sm-12" style="float:right"></div>
             </div>
-        </div>
-     </section>
-        <section id="main" class="actual">
+        </section>
+        <section class="actual" id="main">
             <div class="row center-xs  query">
                 <div class="col-md-8 col-xs-12">
-                    <div class="app-div">
-                        If invested $
-                        <input type="text" name="s" tabindex="1" placeholder="" class="amount" maxlength="5" autofocus="">
+                    <div class="app-div">If invested $
+                        <input autofocus="" class="amount" maxlength="5" name="s" placeholder="" tabindex="1" type="text" />
                     </div>
                     <div class="app-div">
-                        in Bitcoin
-                        <!-- <select name="coin" form="carform" class="select-coin">
+                        <select name="coin" form="carform" class="select-coin" onChange="ifEthereum()">
                             <option value="Bitcoin">Bitcoin</option>
-                            <option value="saab">Ethereum</option>
-                            <option value="opel">Ripple</option>
-                            <option value="audi">Audi</option>
-                        </select> -->
+                            <option value="Ethereum">Ethereum</option>
+                        </select>
                     </div>
-                    <div class="app-div">
-                        on
-                        <select name="coin" form="carform" class="date month">
-                            <option value="01">Jan  </option>
+                    <div class="app-div">on
+                        <select class="date month" form="carform" name="coin">
+                            <option value="01">Jan</option>
                             <option value="02">Feb</option>
                             <option value="03">Mar</option>
                             <option value="04">Apr</option>
@@ -74,10 +69,8 @@ ga('send', 'pageview');
                             <option value="10">Oct</option>
                             <option value="11">Nov</option>
                             <option value="12">Dec</option>
-
-
                         </select>
-                        <select name="coin" form="carform" class="date day">
+                        <select class="date day" form="carform" name="coin">
                             <option value="01">1</option>
                             <option value="02">2</option>
                             <option value="03">3</option>
@@ -109,68 +102,130 @@ ga('send', 'pageview');
                             <option value="29">29</option>
                             <option value="30">30</option>
                             <option value="31">31</option>
-
                         </select>
-                        <select name="coin" form="carform" class="date year">
-                            <option value="2010">2010</option>
-                            <option value="2011" selected>2011</option>
+                        <select class="date year" form="carform" name="coin" style="margin-top:0.5em" >
+                            <option selected="selected" value="2011">2011</option>
                             <option value="2012">2012</option>
                             <option value="2013">2013</option>
                             <option value="2014">2014</option>
                             <option value="2015">2015</option>
                             <option value="2016">2016</option>
                             <option value="2017">2017</option>
-
                         </select>
                     </div>
                 </div>
             </div>
             <div class="row center-xs button-section">
-                <div id="buttons">
-                    <a href="#" class="btn blue" onClick="clicked()">Submit</a>
-<!--                     			  <a href="#" class="btn green">Random</a>
- -->                </div>
+                <div id="buttons"><a class="btn blue" href="#" onclick="clicked()">Submit</a>
+
+              <div class="etherStartDate" style="background-color: yellow; display:none">
+                Starting date for Ethereum is Aug 08, 2015.
+              </div>
+                    <!--                            <a href="#" class="btn green">Random</a>
+ --></div>
             </div>
         </section>
         <section id="footer">
             <div class="row bottom-xs" style="">
-                <div class="col-xs-12">
-                </div>
+                <div class="col-xs-12"></div>
             </div>
-
             <div class="row center-xs">
-              <div class="col-md-3 by-maker">
-                <div>
-                  <a href="http://www.twitter.com/@surfcoderepeat" target="_blank" class="button logo">By @SurfCodeRepeat</a>
-                  <div>
-                    <span style="font-size:11px; align:right;" class="logo">& help from <a target="_blank" href="https://www.coindesk.com/api" class="logo">coindesk</a></span>
-                  </div>
-              </div>
-
-              </div>
+                <div class="col-md-3 by-maker">
+                    <div><a class="button logo" href="http://www.twitter.com/@surfcoderepeat" target="_blank">By @SurfCodeRepeat</a>
+                        <div><span class="logo" style="font-size:11px; align:right;">&amp; help from <a class="logo" href="https://www.coindesk.com/api" target="_blank">coindesk</a></span></div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
+    <style type="text/css">
+
+    </style>
+    <script>
+
+    function ifEthereum() {
+        var a = document.querySelector('.year > option:nth-child(1)');
+        var b = document.querySelector('.year > option:nth-child(2)');
+        var c = document.querySelector('.year > option:nth-child(3)');
+        var d = document.querySelector('.year > option:nth-child(4)');
+        var startRemarks = document.querySelector('.etherStartDate');
+
+        if (document.querySelector('.select-coin').value == "Ethereum") {
+       
+
+          a.style.display = 'none';
+          b.style.display = 'none';
+          c.style.display = 'none';
+          d.style.display = 'none';
+
+
+          var z = document.querySelector('.year > option:nth-child(5)');
+          var dayEight = document.querySelector('.day > option:nth-child(8)');
+          var augMonth = document.querySelector('.month > option:nth-child(8)');
+          
+          augMonth.selected = "selected";
+          dayEight.selected = 'selected';
+          z.selected = 'selected';
+          startRemarks.style.display = 'block';
+
+        }  
+
+        if (document.querySelector('.select-coin').value == "Bitcoin") {
+            startRemarks.style.display = 'none';
+            a.style.display = 'inline-block';
+            b.style.display = 'inline-block';
+            c.style.display = 'inline-block';
+            d.style.display = 'inline-block';
+            var dayEight = document.querySelector('.day > option:nth-child(1)');
+            var augMonth = document.querySelector('.month > option:nth-child(1)');
+            augMonth.selected = "selected";
+            dayEight.selected = 'selected';
+
+          
+            var w = document.querySelector('.year > option:nth-child(1)');
+            w.selected = 'selected';
+        }  
+    }
+
+
+    function clicked() {
+
+      var coin = document.querySelector('.select-coin').value
+      var month = document.querySelector(".month");
+      var amount = document.querySelector(".amount").value;
+      var year = document.querySelector(".year").value;
+      var day = document.querySelector(".day").value;
+
+
+      //bitcoin
+      if (coin == "Bitcoin") {
+        var monthBit = document.querySelector(".month").value;
+        
+        queryBitcoin = year + "-" + monthBit + "-" + day;
+        
+         window.location.replace("result.html?date=" + queryBitcoin + "&amount=" + amount +"&coin=" + coin)
+      }
+
+
+   //ethereum
+
+     if (coin == "Ethereum") {
+        var monthEth = month.options[month.selectedIndex].text;
+        var queryEth = monthEth + ' ' + day + ','+ ' ' +year;
+        console.log(queryEth.toString())
+
+        window.location.replace("result.html?date=" + queryEth + "&amount=" + amount +"&coin=" + coin)
+     }
+      
+
+      
+
+
+
+       
+        // console.log(amount)
+    }
+    </script>
 </body>
 
 </html>
-<style>
-
-</style>
-
-
-<script>
-function clicked() {
-
-  var day = document.querySelector(".day").value;
-  var month = document.querySelector(".month").value;
-  var year = document.querySelector(".year").value;
-  var amount = document.querySelector(".amount").value;
-
-  query = year + "-" + month + "-" + day;
-  window.location.replace("result.html?date=" + query + "&amount=" + amount);
-
-  // console.log(amount)
-}
-
-</script>
