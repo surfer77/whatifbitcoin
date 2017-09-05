@@ -5,7 +5,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link type="text/css" rel="stylesheet" href="css/flexboxgrid.css">
-  <link type="text/css" rel="stylesheet" href="css/main.css">
+  <link type="text/css" rel="stylesheet" href="css/main.css?v=3.4.2">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
   <meta charset="UTF-8">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
@@ -52,10 +52,10 @@ ga('send', 'pageview');
     <section id="main" class="actual">
       <div class="row center-xs  query">
         <div class="col-md-12 col-xs-12">
-          If you invested $<span id="amount"></span> in <span id="coin" class="col"></span> on <span id="date"></span>
+          If you invested <span class="col">$</span><span id="amount" class="col"></span> in <span id="coin" class="col"></span> on <span id="date"></span>
         </div>
         <div class="col-md-12 col-xs-12">
-          You would have made <span id="percentage"></span>% ROI, that's $<span id="profit" class="col"></span> in profit.
+          You would have made <span class="col">$</span><span id="profit" class="col"></span> in profit, that's <span id="percentage"></span>% ROI. 
         </div>
       </div>
 
@@ -88,7 +88,7 @@ ga('send', 'pageview');
   </section>
 
 
-  <script src="js/m.js"></script>
+  <script src="js/m.js?v=0.0.2"></script>
 <script>
 
 

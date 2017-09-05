@@ -93,7 +93,7 @@ console.log(url);
 //     console.log(error);
 //   });
 
-currentPrice = 3400;
+currentPrice = 4300;
 currentPriceEth = 311;
 // change ui
 
